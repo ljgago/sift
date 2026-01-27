@@ -1,0 +1,8 @@
+experimental_monorepo_root = true
+
+[tools]
+bun = "latest"
+go = "1.25"
+
+[env]
+MISE_EXPERIMENTAL = true
