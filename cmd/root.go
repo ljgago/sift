@@ -21,7 +21,7 @@ type Flags struct {
 
 // rootCmd represents the root
 var rootCmd = &cobra.Command{
-	Use:   "npms",
+	Use:   "sift",
 	Short: "An npm search packages viewer",
 	Long:  `An npm search packages viewer`,
 	Run: func(cmd *cobra.Command, args []string) {
