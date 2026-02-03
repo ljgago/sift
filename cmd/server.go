@@ -86,12 +86,12 @@ func serverRun(cmd *cobra.Command, _ []string) {
 	r.Use(chimiddleware.Recoverer)
 	r.Use(httplog.RequestLogger(log.Get()))
 	r.Use(cors.Handler(cors.Options{
-		AllowedOrigins: []string{"https://demo.com"},
-		AllowedMethods: []string{"GET"},
-		// AllowedHeaders: []string{"Accept", "Content-Type", "X-CSRF-Token"},
-		// // ExposedHeaders:   []string{"Link"},
+		AllowedOrigins:   []string{"https://*", "http://*"},
+		AllowedMethods:   []string{"GET"},
+		AllowedHeaders:   []string{"Accept", "Content-Type", "X-CSRF-Token"},
+		ExposedHeaders:   []string{"Link"},
 		AllowCredentials: false,
-		// MaxAge:           300, // Maximum value not ignored by any of major browsers
+		MaxAge:           300, // Maximum value not ignored by any of major browsers
 	}))
 	r.Use(middleware.CSRF)
 	r.Use(middleware.HTTPCache)
